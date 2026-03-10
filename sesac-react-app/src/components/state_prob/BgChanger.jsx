@@ -5,7 +5,7 @@ const BgChanger = () => {
   // 버튼이 필요하다.
   const [isWhite, setIsWhite] = useState(true);
 
-  const [color, setColor] = useState("white");
+  //   const [color, setColor] = useState("white"); // 이렇게도 가능하다
   //   if white -> blue
   //   if blue -> white
 
