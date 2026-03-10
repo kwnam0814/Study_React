@@ -9,6 +9,7 @@ import ChildrenBase from "./components/children_prac/ChildrenBase";
 import RenderingBase from "./components/rendering_prac/RenderingBase";
 import RenderingProb from "./components/rendering_prob/RenderingProb";
 import EventBase from "./components/event_prac/EventBase";
+import StateBase from "./components/state_prac/StateBase";
 
 import styles from "./App.module.css";
 
@@ -45,6 +46,10 @@ function App() {
 
       <div>
         <EventBase />
+      </div>
+
+      <div>
+        <StateBase />
       </div>
     </>
   );
