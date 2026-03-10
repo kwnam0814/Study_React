@@ -25,6 +25,7 @@ const SignupForm = () => {
       <div>
         <input
           type="email"
+          // form 태그안에 없기 때문에 email validation 체크를 안합니다!
           className="border border-black"
           placeholder="이메일"
           value={email}
