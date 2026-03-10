@@ -1,0 +1,11 @@
+/* App.module.css */
+/* App.jsx와 같은 위치에 있어야 함 */
+.container {
+  text-align: center;
+  margin-top: 4rem;
+}
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: blue;
+}
