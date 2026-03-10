@@ -1,27 +1,33 @@
 import React from "react";
 
 const Member = ({ member }) => {
+  //   아래의 삼항연산자 대신 이것을 활용할 수 있음.
+  //   const roleMapping = {
+  //     admin: "관리자",
+  //     user: "일반 회원",
+  //   };
+
+  //   roleMapping[member.role]
+
   return (
-    // isActive 조건에 따라 배경색 결정
-    <div
-      className={`p-[15px] my-[10px] rounded-[8px] border border-solid ${
-        member.isActive ? "bg-[#e8f5e9]" : "bg-[#eeeeee]"
-      }`}
+    <li
+      key={member.id}
+      className={`${member.isActive ? "bg-[#e8f5e9]" : "bg-[#eeeeee]"} p-4 m-4 rounded-lg`}
       // 삼항연산자를 사용하기 위해 className을 ""로 감싸는 것이 아닌, {}로 감싸야 JS 문법이 가능해짐
     >
-      <strong className="font-bold">{member.name}</strong>
-
-      <span className="ml-1">
-        {member.role === "admin" ? "관리자" : "일반 회원"}
+      <span className="text-lg font-bold">{member.name}</span>
+      <span className="text-sm text-gray-500 ml-3">
+        {member.role === "admin"
+          ? "관리자"
+          : member.role === "user"
+            ? "일반 회원"
+            : "회원아님"}
       </span>
-
-      {/* isActive가 false일 때만 표시 */}
+      {/* <span> {!member.isActive && "비활성계정"}</span> */}
       {!member.isActive && (
-        <span className="ml-[10px] text-[0.8rem] text-gray-500">
-          비활성 계정
-        </span>
+        <span className="text-sm text-gray-300 ml-3">비활성계정</span>
       )}
-    </div>
+    </li>
   );
 };
 
