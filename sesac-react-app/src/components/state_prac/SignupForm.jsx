@@ -12,7 +12,7 @@ const SignupForm = () => {
   };
 
   return (
-    <div className="card">
+    <form className="card">
       <div>
         <input
           type="text"
@@ -46,7 +46,7 @@ const SignupForm = () => {
           가입
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 
