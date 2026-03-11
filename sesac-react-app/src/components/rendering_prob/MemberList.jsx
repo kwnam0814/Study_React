@@ -16,7 +16,7 @@ const MemberList = () => {
 
   return (
     <>
-      <div>MemberList</div>;
+      <div>MemberList</div>
       <ul>
         <li>김철수</li>
         <li>이영희</li>
