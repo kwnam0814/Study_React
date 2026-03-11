@@ -17,26 +17,28 @@ const SignupForm = () => {
   };
 
   return (
-    <div>
+    <div className="card">
       <input
         name="name"
-        placeholder="이름"
+        placeholder="이름을 입력하시오"
         value={form.name}
         onChange={handleChange}
       />
       <input
         name="email"
-        placeholder="이메일"
+        placeholder="이메일을 입력하시오"
         value={form.email}
         onChange={handleChange}
       />
       <input
         name="age"
-        placeholder="나이"
+        placeholder="나이를 입력하시오"
         value={form.age}
         onChange={handleChange}
       />
-      <button onClick={handleSubmit}>가입</button>
+      <button className="button" onClick={handleSubmit}>
+        가입
+      </button>
     </div>
   );
 };

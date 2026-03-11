@@ -12,10 +12,12 @@ const Profile = () => {
   };
 
   return (
-    <div>
+    <div className="card">
       <p>이름: {user.name}</p>
       <p>나이: {user.age}</p>
-      <button onClick={handleBirthday}>생일 축하!</button>
+      <button className="button" onClick={handleBirthday}>
+        생일 축하![클릭하면 나이 증가]
+      </button>
     </div>
   );
 };
