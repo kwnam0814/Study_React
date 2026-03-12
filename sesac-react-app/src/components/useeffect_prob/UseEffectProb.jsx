@@ -3,7 +3,6 @@ import Counter from "./Counter";
 import TitleChanger from "./TitleChanger";
 import CatGallery from "./CatGallery";
 import CatGalleryAdv from "./CatGalleryAdv";
-import TMDBNowPlaying from "./TMDBNowPlaying";
 
 const UseEffectProb = () => {
   return (
@@ -13,7 +12,6 @@ const UseEffectProb = () => {
       <TitleChanger />
       <CatGallery />
       <CatGalleryAdv />
-      <TMDBNowPlaying />
     </>
   );
 };

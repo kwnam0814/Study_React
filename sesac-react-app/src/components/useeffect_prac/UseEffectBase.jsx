@@ -3,8 +3,12 @@ import CounterEmpty from "./CounterEmpty";
 import CounterValue from "./CounterValue";
 import Profile from "./Profile";
 import UserList from "./UserLIst";
-import UserListException from "./UserListException";
 import UserListLoading from "./UserListLoading";
+import UserListException from "./UserListException";
+import MovieList from "./MovieList";
+import UserProfile from "./UserProfile";
+import PostList from "./PostList";
+import TimerContainer from "./TImerContainer";
 
 export const UseEffectBase = () => {
   return (
@@ -14,8 +18,13 @@ export const UseEffectBase = () => {
       <CounterValue />
       <Profile />
       <UserList />
-      <UserListException />
       <UserListLoading />
+      <UserListException />
+      <MovieList />
+      <UserProfile />
+      <PostList />
+      {/* <TimerContainer /> */}
+      {/* console.log() 에 찍히는 것 때문에 주석처리 하겠음 */}
     </>
   );
 };
