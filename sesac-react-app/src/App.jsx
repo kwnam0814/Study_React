@@ -12,6 +12,7 @@ import EventBase from "./components/event_prac/EventBase";
 import StateBase from "./components/state_prac/StateBase";
 import StateProb from "./components/state_prob/StateProb";
 import StateAdvBase from "./components/state_adv_prac/StateAdvBase";
+import { UseEffectBase } from "./components/useeffect_prac/UseEffectBase";
 
 import styles from "./App.module.css";
 
@@ -60,6 +61,10 @@ function App() {
 
       <div>
         <StateAdvBase />
+      </div>
+
+      <div>
+        <UseEffectBase />
       </div>
     </>
   );

@@ -48,9 +48,8 @@ const TodoListAdv = () => {
               {todo.liked ? "❤️" : "🤍"}
             </span>
 
-            <span style={{ textDecoration: todo.liked ? "none" : "none" }}>
-              {todo.text}
-            </span>
+            {/* 텍스트 클릭 시에도 토글되도록 onClick 추가 */}
+            <span onClick={() => handleToggleLike(todo.id)}>{todo.text}</span>
 
             <button onClick={() => handleDelete(todo.id)} className="button">
               삭제
