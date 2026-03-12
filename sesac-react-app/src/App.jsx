@@ -13,6 +13,7 @@ import StateBase from "./components/state_prac/StateBase";
 import StateProb from "./components/state_prob/StateProb";
 import StateAdvBase from "./components/state_adv_prac/StateAdvBase";
 import { UseEffectBase } from "./components/useeffect_prac/UseEffectBase";
+import UseEffectBaseProb from "./components/useeffect_prob/UseEffectBaseProb";
 
 import styles from "./App.module.css";
 
@@ -65,6 +66,10 @@ function App() {
 
       <div>
         <UseEffectBase />
+      </div>
+
+      <div>
+        <UseEffectBaseProb />
       </div>
     </>
   );
