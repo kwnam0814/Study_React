@@ -53,7 +53,8 @@ Base.metadata.create_all(bind=engine)
 
 @app.get("/todos")
 def get_todos(db: Session = Depends(get_db)):
-    return db.scalars(select(Todo)).all()
+    stmt = select(Todo).order_by(Todo.id)
+    return db.scalars(stmt).all()
 
 
 @app.post("/todos")
