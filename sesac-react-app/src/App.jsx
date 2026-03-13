@@ -14,6 +14,7 @@ import StateProb from "./components/state_prob/StateProb";
 import StateAdvBase from "./components/state_adv_prac/StateAdvBase";
 import { UseEffectBase } from "./components/useeffect_prac/UseEffectBase";
 import UseEffectProb from "./components/useeffect_prob/UseEffectProb";
+import TodoList from "./components/fastapi_prac/TodoList";
 
 import styles from "./App.module.css";
 
@@ -70,6 +71,10 @@ function App() {
 
       <div>
         <UseEffectProb />
+      </div>
+
+      <div>
+        <TodoList />
       </div>
     </>
   );
