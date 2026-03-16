@@ -16,6 +16,7 @@ import { UseEffectBase } from "./components/useeffect_prac/UseEffectBase";
 import UseEffectProb from "./components/useeffect_prob/UseEffectProb";
 import TodoList from "./components/fastapi_prac/TodoList";
 import TodoList2 from "./components/fastapi_prac/TodoList2";
+import UseRefBase from "./components/useref_prac/UseRefBase";
 
 import styles from "./App.module.css";
 
@@ -80,6 +81,10 @@ function App() {
 
       <div>
         <TodoList2 />
+      </div>
+
+      <div>
+        <UseRefBase />
       </div>
     </>
   );
