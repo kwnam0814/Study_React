@@ -9,7 +9,9 @@ const ScrollPage = () => {
 
   return (
     <div className="card">
-      <button onClick={scrollToBottom}>맨 아래로 이동</button>
+      <button className="button" onClick={scrollToBottom}>
+        맨 아래로 이동(클릭)
+      </button>
       <div style={{ height: "200vh" }} />
       <div ref={bottomRef}>여기가 맨 아래입니다</div>
     </div>

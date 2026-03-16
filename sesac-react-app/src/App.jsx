@@ -3,6 +3,10 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
+// router에 대한 import
+import { RouterProvider } from "react-router-dom";
+import router from "./components/router_prac/index";
+
 import JsxBase from "./components/jsx_prac/JsxBase";
 import PropsBase from "./components/props_prac/PropsBase";
 import ChildrenBase from "./components/children_prac/ChildrenBase";
@@ -85,6 +89,10 @@ function App() {
 
       <div>
         <UseRefBase />
+      </div>
+
+      <div>
+        <RouterProvider router={router} />
       </div>
     </>
   );
