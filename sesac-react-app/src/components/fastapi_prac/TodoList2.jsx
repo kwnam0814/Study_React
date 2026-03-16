@@ -107,7 +107,7 @@ const TodoList2 = () => {
 
   return (
     <div className="card">
-      <h2>TodoList - 선생님용</h2>
+      <h2 className="text-xl font-bold mb-4">TodoList - 선생님용</h2>
       <form onSubmit={(e) => handleSubmit(e)}>
         <input
           type="text"
@@ -115,7 +115,7 @@ const TodoList2 = () => {
           onChange={(e) => setInputText(e.target.value)}
           value={inputText}
         />
-        <button className="button">추가하기</button>
+        <button className="button">추가</button>
       </form>
       <ul>
         {todos.map((todo) => (
@@ -143,7 +143,7 @@ const TodoList2 = () => {
               onClick={() => handleDelete(todo.id)}
               className="button ml-5"
             >
-              삭제하기
+              삭제
             </button>
           </li>
         ))}
