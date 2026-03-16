@@ -5,7 +5,7 @@ import "./App.css";
 
 // router에 대한 import
 import { RouterProvider } from "react-router-dom";
-import router from "./components/router_prac/index";
+import router from "./router_prac";
 
 import JsxBase from "./components/jsx_prac/JsxBase";
 import PropsBase from "./components/props_prac/PropsBase";
@@ -28,7 +28,9 @@ function App() {
   return (
     <>
       <JsxBase />
+
       <PropsBase />
+
       <ChildrenBase />
 
       <div>
