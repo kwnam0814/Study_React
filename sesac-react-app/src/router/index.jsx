@@ -16,6 +16,9 @@ import ShopSimpleLayout from "../pages_prob/ShopSimpleLayout";
 import PostList from "../url_data_prac/PostList";
 import PostDetail from "../url_data_prac/PostDetail";
 import ProductList from "../url_data_prac/ProductList";
+import UserListPage from "../url_data_prac/UserListPage";
+import UserDetailPage from "../url_data_prac/UserDetailPage";
+import MovieSearch from "../url_data_prac/MovieSearch";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +72,18 @@ const router = createBrowserRouter([
       { path: "login", element: <ShopLogin /> },
       { path: "signup", element: <ShopSignUp /> },
     ],
+  },
+  {
+    path: "/users",
+    element: <UserListPage />,
+  },
+  {
+    path: "/users/:userId",
+    element: <UserDetailPage />,
+  },
+  {
+    path: "/movies/search",
+    element: <MovieSearch />,
   },
 ]);
 
