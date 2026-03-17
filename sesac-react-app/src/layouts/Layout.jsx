@@ -15,8 +15,8 @@ const Layout = () => {
           <NavLink to="/contact" className="button">
             연락처
           </NavLink>
-          <NavLink to="/login" className="button">
-            로그인
+          <NavLink to="/layout-prob/home" className="button">
+            /layout-prob
           </NavLink>
         </nav>
       </header>

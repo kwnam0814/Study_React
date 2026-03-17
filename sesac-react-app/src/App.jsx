@@ -5,8 +5,7 @@ import "./App.css";
 
 // router에 대한 import
 import { RouterProvider } from "react-router-dom";
-import router from "./router_prac";
-import router2 from "./router_prob";
+import router from "./router";
 
 import JsxBase from "./components/jsx_prac/JsxBase";
 import PropsBase from "./components/props_prac/PropsBase";
@@ -97,12 +96,8 @@ function App() {
       {/* router는 App.jsx에서 한 개만 있어야 함! 
       두 개 이상이면 어느 하나가 오류남! */}
 
-      {/* <div>
+      <div>
         <RouterProvider router={router} />
-      </div> */}
-
-      <div className="card">
-        <RouterProvider router={router2} />
       </div>
     </>
   );
