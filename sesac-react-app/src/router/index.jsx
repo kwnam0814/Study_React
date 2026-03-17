@@ -25,61 +25,62 @@ import Account from "../pages/Account";
 import NotFound from "../pages/NotFound";
 import ErrorPage from "../pages/ErrorPage";
 
+const mainRoute = {
+  path: "/",
+  element: <Layout />,
+  errorElement: <ErrorPage />,
+  children: [
+    {
+      index: true,
+      element: <Home />,
+    },
+    {
+      path: "about",
+      element: <About />,
+    },
+    {
+      path: "contact",
+      element: <Contact />,
+    },
+    {
+      path: "login",
+      element: <LoginPage />,
+    },
+    {
+      path: "settings",
+      element: <Settings />,
+      children: [
+        {
+          index: true,
+          element: <Profile />,
+        },
+        {
+          path: "profile",
+          element: <Profile />,
+        },
+        {
+          path: "account",
+          element: <Account />,
+        },
+      ],
+    },
+    { path: "mypage", element: <MyPage /> },
+    {
+      path: "posts",
+      element: <PostList />,
+    },
+    {
+      path: "posts/:id",
+      element: <PostDetail />,
+    },
+    {
+      path: "products",
+      element: <ProductList />,
+    },
+  ],
+};
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "about",
-        element: <About />,
-      },
-      {
-        path: "contact",
-        element: <Contact />,
-      },
-      {
-        path: "login",
-        element: <LoginPage />,
-      },
-      {
-        path: "settings",
-        element: <Settings />,
-        children: [
-          {
-            index: true,
-            element: <Profile />,
-          },
-          {
-            path: "profile",
-            element: <Profile />,
-          },
-          {
-            path: "account",
-            element: <Account />,
-          },
-        ],
-      },
-      { path: "mypage", element: <MyPage /> },
-      {
-        path: "posts",
-        element: <PostList />,
-      },
-      {
-        path: "posts/:id",
-        element: <PostDetail />,
-      },
-      {
-        path: "products",
-        element: <ProductList />,
-      },
-    ],
-  },
+  mainRoute,
   {
     path: "/layout-prob",
     element: <ShopLayout />,
