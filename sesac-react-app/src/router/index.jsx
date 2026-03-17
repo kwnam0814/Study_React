@@ -19,6 +19,9 @@ import ProductList from "../url_data_prac/ProductList";
 import UserListPage from "../url_data_prac/UserListPage";
 import UserDetailPage from "../url_data_prac/UserDetailPage";
 import MovieSearch from "../url_data_prac/MovieSearch";
+import Settings from "../pages/Settings";
+import Profile from "../pages/Profile";
+import Account from "../pages/Account";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +43,24 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <LoginPage />,
+      },
+      {
+        path: "settings",
+        element: <Settings />,
+        children: [
+          {
+            index: true,
+            element: <Profile />,
+          },
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+          {
+            path: "account",
+            element: <Account />,
+          },
+        ],
       },
       { path: "mypage", element: <MyPage /> },
       {
