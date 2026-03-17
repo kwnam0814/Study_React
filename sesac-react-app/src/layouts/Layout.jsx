@@ -6,6 +6,8 @@ const Layout = () => {
     <div className="card">
       <header>
         <nav>
+          {/* 오류 강제 발생 */}
+          {/* {undefined.attribute} */}
           <NavLink className="button" to="/">
             홈
           </NavLink>

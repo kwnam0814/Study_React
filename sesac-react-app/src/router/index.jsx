@@ -22,11 +22,14 @@ import MovieSearch from "../url_data_prac/MovieSearch";
 import Settings from "../pages/Settings";
 import Profile from "../pages/Profile";
 import Account from "../pages/Account";
+import NotFound from "../pages/NotFound";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -105,6 +108,10 @@ const router = createBrowserRouter([
   {
     path: "/movies/search",
     element: <MovieSearch />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 
