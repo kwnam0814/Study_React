@@ -28,6 +28,26 @@ import Theme from "../components/zustand_prac/Theme";
 import ShoppingList from "../components/zustand_prac/ShoppingList";
 import ShoppingCart from "../components/zustand_prac/ShoppingCart";
 import ProtectedRoute from "../components/ProtectedRoute";
+import AuthLayout from "../components/auth_prac/AuthLayout";
+import AuthHome from "../components/auth_prac/AuthHome";
+import AuthSignup from "../components/auth_prac/AuthSignup";
+import AuthLogin from "../components/auth_prac/AuthLogin";
+import AuthProtectedRoute from "../components/auth_prac/AuthProtectedRoute";
+import AuthMyPage from "../components/auth_prac/AuthMyPage";
+
+const authRoute = {
+  path: "/auth",
+  element: <AuthLayout />,
+  children: [
+    { index: true, element: <AuthHome /> },
+    { path: "signup", element: <AuthSignup /> },
+    { path: "login", element: <AuthLogin /> },
+    {
+      element: <AuthProtectedRoute />,
+      children: [{ path: "mypage", element: <AuthMyPage /> }],
+    },
+  ],
+};
 
 const mainRoute = {
   path: "/",
@@ -143,6 +163,7 @@ const router = createBrowserRouter([
     path: "*",
     element: <NotFound />,
   },
+  authRoute,
 ]);
 
 export default router;

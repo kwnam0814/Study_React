@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -6,6 +6,7 @@ import "./App.css";
 // router에 대한 import
 import { RouterProvider } from "react-router-dom";
 import router from "./router";
+import useAuthStore from "./store/useAuthStore";
 
 import JsxBase from "./components/jsx_prac/JsxBase";
 import PropsBase from "./components/props_prac/PropsBase";
@@ -25,9 +26,15 @@ import UseRefBase from "./components/useref_prac/UseRefBase";
 import styles from "./App.module.css";
 
 function App() {
+  const checkAuth = useAuthStore((state) => state.checkAuth);
+
+  useEffect(() => {
+    checkAuth();
+  }, []);
+
   return (
     <>
-      <JsxBase />
+      {/* <JsxBase />
 
       <PropsBase />
 
@@ -91,7 +98,7 @@ function App() {
 
       <div>
         <UseRefBase />
-      </div>
+      </div> */}
 
       {/* router는 App.jsx에서 한 개만 있어야 함! 
       두 개 이상이면 어느 하나가 오류남! */}
