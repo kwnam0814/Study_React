@@ -34,7 +34,7 @@ function App() {
 
   return (
     <>
-      {/* <JsxBase />
+      <JsxBase />
 
       <PropsBase />
 
@@ -98,7 +98,7 @@ function App() {
 
       <div>
         <UseRefBase />
-      </div> */}
+      </div>
 
       {/* router는 App.jsx에서 한 개만 있어야 함! 
       두 개 이상이면 어느 하나가 오류남! */}
