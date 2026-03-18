@@ -24,6 +24,9 @@ import Profile from "../pages/Profile";
 import Account from "../pages/Account";
 import NotFound from "../pages/NotFound";
 import ErrorPage from "../pages/ErrorPage";
+import Theme from "../components/zustand_prac/Theme";
+import ShoppingList from "../components/zustand_prac/ShoppingList";
+import ShoppingCart from "../components/zustand_prac/ShoppingCart";
 
 const mainRoute = {
   path: "/",
@@ -109,6 +112,18 @@ const router = createBrowserRouter([
   {
     path: "/movies/search",
     element: <MovieSearch />,
+  },
+  {
+    path: "/theme",
+    element: <Theme />,
+  },
+  {
+    path: "/shopping",
+    element: <ShoppingList />,
+  },
+  {
+    path: "/shopping-cart",
+    element: <ShoppingCart />,
   },
   {
     path: "*",
