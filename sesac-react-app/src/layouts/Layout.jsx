@@ -1,4 +1,4 @@
-// src/layouts/Layout.jsx
+import React from "react";
 import { Outlet, Link, NavLink } from "react-router-dom";
 
 const Layout = () => {
@@ -18,7 +18,10 @@ const Layout = () => {
             연락처
           </NavLink>
           <NavLink to="/settings" className="button">
-            Setting
+            세팅
+          </NavLink>
+          <NavLink to="/mypage" className="button">
+            마이페이지
           </NavLink>
           <NavLink to="/layout-prob/home" className="button">
             /layout-prob

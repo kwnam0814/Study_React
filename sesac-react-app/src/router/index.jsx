@@ -27,6 +27,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Theme from "../components/zustand_prac/Theme";
 import ShoppingList from "../components/zustand_prac/ShoppingList";
 import ShoppingCart from "../components/zustand_prac/ShoppingCart";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 const mainRoute = {
   path: "/",
@@ -63,11 +64,24 @@ const mainRoute = {
         },
         {
           path: "account",
-          element: <Account />,
+          element: (
+            //<ProtectedRoute>
+            <Account />
+            //</ProtectedRoute>
+          ),
         },
       ],
     },
-    { path: "mypage", element: <MyPage /> },
+    {
+      element: <ProtectedRoute />,
+      children: [
+        {
+          path: "mypage",
+          element: <MyPage />,
+        },
+      ],
+    },
+
     {
       path: "posts",
       element: <PostList />,
