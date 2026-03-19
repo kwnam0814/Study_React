@@ -1,5 +1,6 @@
 # main.py
 from datetime import datetime, timedelta, timezone
+
 import bcrypt
 import jwt
 from fastapi import FastAPI, Depends, HTTPException, status
@@ -13,6 +14,10 @@ from sqlalchemy.orm import (
     DeclarativeBase,
     sessionmaker,
 )
+
+# --- import 추가 ---
+from fastapi.responses import StreamingResponse
+import time
 
 # --- DB 설정 ---
 
@@ -35,9 +40,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 터미널 창 : openssl rand -hex 32
-
-SECRET_KEY = "c2c81f0d9bdda3efe42d7f8ffa777c6170c98fcd247915679c48e77f20391d70"  # 실제 서비스에서는 환경변수로 관리해야 한다
+SECRET_KEY = "your-secret-key"  # 실제 서비스에서는 환경변수로 관리해야 한다
 ALGORITHM = "HS256"
 EXPIRE_MINUTES = 3000  # 약 2일 - 수업 편의를 위해 길게 설정
 
@@ -75,6 +78,7 @@ class User(Base):
 
 
 Base.metadata.create_all(bind=engine)
+
 
 # --- 헬퍼 함수 ---
 
@@ -183,3 +187,45 @@ def login(data: dict, db: Session = Depends(get_db)):
 @app.get("/auth/me")
 def get_me(current_user: User = Depends(get_current_user)):
     return {"id": current_user.id, "email": current_user.email}
+
+
+# main.py - 기존 코드에 추가할 부분
+
+
+# --- Chat API (추가) ---
+def generate_message():
+    """글자를 하나씩 보내는 제너레이터"""
+    message = "안녕하세요! 저는 AI 어시스턴트입니다. 무엇을 도와드릴까요?"
+
+    for char in message:
+        yield f"data: {char}\n\n"
+        time.sleep(0.1)  # 0.1초 간격으로 전송
+
+    yield "data: [DONE]\n\n"
+
+
+# @app.post("/chat")
+# def chat():
+#     return StreamingResponse(
+#         generate_message(),
+#         media_type="text/event-stream",
+#     )
+
+
+def generate_response(message: str):
+    """사용자 메시지에 따라 응답을 스트리밍하는 제너레이터"""
+    response = f"'{message}'에 대한 답변입니다. 이것은 스트리밍 테스트 응답입니다!"
+
+    for char in response:
+        yield f"data: {char}\n\n"
+        time.sleep(0.1)
+
+    yield "data: [DONE]\n\n"
+
+
+@app.post("/chat")
+def chat(body: dict):
+    return StreamingResponse(
+        generate_response(body["message"]),
+        media_type="text/event-stream",
+    )

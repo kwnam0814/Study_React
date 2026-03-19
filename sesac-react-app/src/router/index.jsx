@@ -34,6 +34,7 @@ import AuthSignup from "../components/auth_prac/AuthSignup";
 import AuthLogin from "../components/auth_prac/AuthLogin";
 import AuthProtectedRoute from "../components/auth_prac/AuthProtectedRoute";
 import AuthMyPage from "../components/auth_prac/AuthMyPage";
+import Chat from "../components/stream_prac/Chat";
 
 const authRoute = {
   path: "/auth",
@@ -54,6 +55,10 @@ const mainRoute = {
   element: <Layout />,
   errorElement: <ErrorPage />,
   children: [
+    {
+      path: "chat",
+      element: <Chat />,
+    },
     {
       index: true,
       element: <Home />,
