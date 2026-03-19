@@ -26,6 +26,12 @@ const Layout = () => {
           <NavLink to="/layout-prob/home" className="button">
             /layout-prob
           </NavLink>
+          <NavLink to="/auth/login" className="button">
+            /auth/login
+          </NavLink>
+          <NavLink to="/ai-chat" className="button">
+            /ai-chat
+          </NavLink>
         </nav>
       </header>
 
